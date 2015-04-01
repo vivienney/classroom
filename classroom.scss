@@ -1,0 +1,191 @@
+@import "normalize";
+@import "bourbon";
+@import url(http://fonts.googleapis.com/css?family=Karla:400,700);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F2EFEF;
+  font-family: 'Karla', sans-serif;
+  color: #313131;
+}
+
+header, .classroom-view {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 20px 0;
+  padding: 0 100px;
+}
+
+.classroom-view {
+  margin-top: 80px;
+}
+
+.screen {
+  width: 60%;
+  margin: 0 auto 40px;
+  text-align: center;
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 8px;
+    border: 2px solid #ff341a;
+  }
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+.tables {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
+
+.table {
+  @include display(flex);
+  width: 45%;
+  margin-bottom: 40px;
+}
+
+
+.table__seat {
+  @include display(flex);
+  height: 112px;
+  width: 50%;
+  border: 2px solid #ff341a;
+  cursor: pointer;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: opacity 0.4s;
+  &:hover p {
+    color: #ff341a;
+  }
+
+  p {
+    margin: auto;
+    transition: color 0.4s;
+  }
+}
+
+.seat--left {
+  border-right-style: dashed;
+  &.not-assigned {
+    border-right: none;
+    & + div {
+      border-left: 2px dashed #ff341a;
+    }
+  }
+
+  &:before {
+    content: url(tray-left.svg);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+}
+
+.seat--right {
+  border-left: none;
+  &:before {
+    content: url(tray-right.svg);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+.seat--empty {
+  opacity: 0.5;
+}
+
+
+.modal {
+  @include display(flex);
+  pointer-events: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+}
+
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  background-color: rgba(55, 58, 71, 0.8);
+  transition: opacity 0.3s;
+  @include backface-visibility(hidden);
+}
+
+.modal--visible {
+  .modal__overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal__content {
+    @include animation(fadeIn 0.4s);
+    @include animation-fill-mode(forwards);
+    pointer-events: auto;
+  }
+}
+
+.modal--closing {
+  .modal__content {
+    @include animation(fadeOut 0.4s);
+    @include animation-fill-mode(forwards);
+  }
+}
+
+.modal__content {
+  position: relative;
+  z-index: 5;
+  width: 50%;
+  padding: 40px;
+  border: 12px solid #ff341a;
+  background-color: #ffffff;
+  margin: auto;
+  opacity: 0;
+}
+
+@include keyframes(fadeIn) {
+  0% {
+    opacity: 0;
+    @include transform(scale3d(1.1, 1.1, 1));
+  }
+  100% {
+    opacity: 1;
+    @include transform(scale3d(1,1,1));
+  }
+}
+
+@include keyframes(fadeOut) {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    @include transform(scale3d(0.9,0.9,1));
+  }
+}

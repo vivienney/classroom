@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="98px" height="28px" viewBox="0 0 98 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Breakfast Tray</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Add-info-modal" sketch:type="MSArtboardGroup" transform="translate(-552.000000, -321.000000)">
+            <g id="Desk-8" sketch:type="MSLayerGroup" transform="translate(542.000000, 313.000000)">
+                <g id="Breakfast-Tray" transform="translate(10.000000, 8.000000)" sketch:type="MSShapeGroup">
+                    <rect id="Tray" stroke="#FF341A" stroke-width="2" x="0.333333333" y="0.666666667" width="65.3333333" height="26.6666667" rx="3"></rect>
+                    <path d="M77.3333333,14 L72,14" id="Line" stroke="#FF341A" stroke-width="2" stroke-linecap="round"></path>
+                    <circle id="Mug" stroke="#FF341A" stroke-width="2" cx="87.6666667" cy="14" r="9.33333333"></circle>
+                    <ellipse id="OJ" fill="#FF341A" cx="15" cy="14" rx="4" ry="4"></ellipse>
+                    <ellipse id="Glass" fill="#FF341A" cx="32.3333333" cy="14" rx="5.33333333" ry="5.33333333"></ellipse>
+                    <path d="M52.3333333,20.6666667 C56.0152317,20.6666667 59,17.6818983 59,14 C59,10.3181017 56.0152317,7.33333333 52.3333333,7.33333333 C48.651435,7.33333333 45.6666667,10.3181017 45.6666667,14 C45.6666667,17.6818983 48.651435,20.6666667 52.3333333,20.6666667 Z M52.3333333,16.6666667 C53.8060927,16.6666667 55,15.4727593 55,14 C55,12.5272407 53.8060927,11.3333333 52.3333333,11.3333333 C50.860574,11.3333333 49.6666667,12.5272407 49.6666667,14 C49.6666667,15.4727593 50.860574,16.6666667 52.3333333,16.6666667 Z" id="Bottle" fill="#FF341A"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

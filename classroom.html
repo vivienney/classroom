@@ -1,0 +1,86 @@
+<head>
+  <title>Steer Classroom</title>
+</head>
+
+<body>
+  <header>
+    {{> logo}}
+    <h2>Welcome to the Steer classroom, to help people get to know each other quicker find your desk and add in some info.</h2>
+  </header>
+
+  <section class="classroom-view">
+    <div class="screen">
+      <p>Screen</p>
+    </div>
+
+    <div class="tables">
+      {{#each seats}}
+        <div class="table">
+          {{#each table}}
+          <div class="table__seat {{seatSide}} {{seatEmpty}}">
+            <p>{{fullName}}</p>
+          </div>
+          {{/each}}
+        </div>
+      {{/each}}
+    </div>
+
+  </section>
+
+  {{> classroom}}
+
+  {{> modal}}
+</body>
+
+<template name="classroom">
+  {{#each students}}
+    {{> table}}
+  {{/each}}
+</template>
+
+
+<template name="table">
+  {{tableId}}
+  {{name}}
+</template>
+
+
+<template name="modal">
+  <div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      {{> studentForm}}
+    </div>
+  </div>
+</template>
+
+
+<template name="studentForm">
+  {{#with selectedSeatData}}
+  <form class="addStudent">
+    <div>
+      <label>Name:</label>
+      <input type="text" name="fullName" required value="{{fullName}}">
+    </div>
+
+    <div>
+      <label>Vocation:</label>
+      <input type="text" name="vocation" value="{{vocation}}">
+    </div>
+
+    <div>
+      <label>Email:</label>
+      <input type="email" name="email" value="{{email}}">
+    </div>
+
+    <div>
+      <label>Twitter:</label>
+      <input type="text" name="twitter" value="{{twitter}}">
+    </div>
+
+    <div>
+      <button name="submit" type="submit">Add to your desk</button>
+    </div>
+  </form>
+  {{/with}}
+</template>
